@@ -1,0 +1,176 @@
+@charset "utf-8";
+
+h1 {
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+}
+
+.slides {
+	overflow: hidden;
+	position: relative;
+	width: 1120px;
+	height: 450px;
+	margin: 0 auto;
+	border: 1px solid #000;
+}
+
+.slides > .slides-container {
+	position: absolute;
+
+	/* 첫번째 슬라이드    left: 0*/
+	/* 두번째 슬라이드    left: -1120px*/
+	/* 세번째 슬라이드    left: -2240px*/
+	/* 네번째 슬라이드    left: -3360px*/
+	/* 다섯번째 슬라이드  left: -4480px*/
+	left: 0;
+	top: 0;
+
+	width: calc(1120px * 5);
+	display: flex;
+	flex-flow: row nowrap;
+
+	transition: all .4s ease-in-out;
+}
+.slides > .slides-container > p {
+	width: 1120px;
+	text-indent: -9999px;
+	background-position: center center;
+	background-size: cover;
+}
+
+.slides > .slides-container > p:nth-child(1) {
+	background-image: url(./../images/slide-1.jpg);
+}
+.slides > .slides-container > p:nth-child(2) {
+	background-image: url(./../images/slide-2.jpg);
+}
+.slides > .slides-container > p:nth-child(3) {
+	background-image: url(./../images/slide-3.jpg);
+}
+.slides > .slides-container > p:nth-child(4) {
+	background-image: url(./../images/slide-4.jpg);
+}
+.slides > .slides-container > p:nth-child(5) {
+	background-image: url(./../images/slide-5.jpg);
+}
+.slides > .slides-container > p > a {
+	display: block;
+	height: 450px;
+}
+
+.slides > .slides-pagination {
+	position: absolute;
+	right: 90px;
+	top: 50%;
+	margin-top: -150px;
+	border: 1px solid #eee;
+}
+.slides > .slides-pagination > li {
+	width: 180px;
+}
+
+.slides > .slides-pagination > li:nth-child(1) {
+	background-image: url(./../images/indicator-1.jpg);
+}
+.slides > .slides-pagination > li:nth-child(2) {
+	background-image: url(./../images/indicator-2.jpg);
+}
+.slides > .slides-pagination > li:nth-child(3) {
+	background-image: url(./../images/indicator-3.jpg);
+}
+.slides > .slides-pagination > li:nth-child(4) {
+	background-image: url(./../images/indicator-4.jpg);
+}
+.slides > .slides-pagination > li:nth-child(5) {
+	background-image: url(./../images/indicator-5.jpg);
+}
+.slides > .slides-pagination > li > a {
+	display: block;
+	height: 60px;
+	text-indent: -9999px;
+}
+
+.slides > .slides-pagination > li.on > a,
+.slides > .slides-pagination > li:hover > a {
+	border: 2px solid #000;
+	box-sizing: border-box;
+}
+
+/* 이전, 다음 */
+.slides > a {
+	display: block;
+	position: absolute;
+	top: 50%;
+	width: 80px;
+	height: 100px;
+	margin-top: -50px;
+	text-indent: -9999px;
+	background-image: url(./../images/btn_navigation.png);
+}
+
+.slides > a.prev {
+	left: 0;
+	background-position: -5px -225px;
+}
+
+.slides > a.prev:hover {
+	background-position: -5px -335px;
+}
+
+.slides > a.next {
+	right: 0;
+	background-position: -5px -5px;
+}
+
+.slides > a.next:hover {
+	background-position: -5px -115px;
+}
+
+/* 자동실행, 멈춤 */
+.slides > span {
+	display: block;
+	position: absolute;
+	left: 50%;
+	bottom: 10px;
+	width: 26px;
+	height: 26px;
+	background-color: #fff;
+	text-indent: -9999px;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.slides > span::before {
+	display: block;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border-width: 8px;
+	border-style: solid;
+	content: '';
+}
+
+.slides > span:hover {
+	background-color: pink;
+}
+.slides > span.play::before {
+	margin: -8px 0 0 -2px;
+	border-color: transparent transparent transparent skyblue;
+}
+.slides > span.play {
+	margin-left: -35px;
+}
+
+.slides > span.stop::before {
+	margin: -5px 0 0 -5px;
+	border-width: 5px;
+	border-color: skyblue;
+}
+address {
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+}
